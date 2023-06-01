@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 </head>
 <body>
-    <a href="../index.html" class="d-flex justify-content-center mt-4">
+    <a href="../index.php" class="d-flex justify-content-center mt-4">
         <img class="mb-4" src="../img/clavier.jpg" alt="logo de Sténotypie" width="82" height="82">
     </a>
 
@@ -22,12 +22,12 @@
         <div class="row">
             <!--Grid column-->
             <div class="col-md-9 mb-md-0 mb-5">
-                <form id="contact-form" name="contact-form" action="contactpage.php" method="POST">
+                <form id="contact-form" name="contact-form" action="envoi-mail.php" method="POST">
                     <!--Grid row-->
                     <div class="row">
                         <!--Grid column-->
                         <div class="col-md-6">
-                            <div class="md-form mb-0">
+                            <div class="form-group">
                                 <input type="text" id="name" name="name" class="form-control">
                                 <label for="name">Votre nom</label>
                             </div>
@@ -35,7 +35,7 @@
                         <!--Grid column-->
                         <!--Grid column-->
                         <div class="col-md-6">
-                            <div class="md-form mb-0">
+                            <div class="form-group">
                                 <input type="text" id="email" name="email" class="form-control">
                                 <label for="email">Votre email</label>
                             </div>
@@ -46,7 +46,7 @@
                     <!--Grid row-->
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="md-form mb-0">
+                            <div class="form-group">
                                 <input type="text" id="subject" name="subject" class="form-control">
                                 <label for="subject">Objet de votre mail</label>
                             </div>
@@ -57,18 +57,29 @@
                     <div class="row">
                         <!--Grid column-->
                         <div class="col-md-12">
-                            <div class="md-form">
-                                <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
+                            <div class="form-group">
+                                <textarea type="text" id="message" name="message" rows="2" class="form-control"></textarea>
                                 <label for="message">Votre message</label>
                             </div>
                         </div>
                     </div>
                     <!--Grid row-->
+                    <div class="text-center text-md-left">
+                        <button class="btn btn-primary" type="submit">Envoyer</button>
+                        <div class="status">
+                            <?php
+                            if(isset($_GET['success']) && $_GET['success'] == 1) {
+                                echo '<div class="alert alert-success">Le message a été envoyé avec succès.</div>';
+                            } elseif(isset($_GET['error']) && $_GET['error'] == 1) {
+                                echo '<div class="alert alert-danger">Une erreur est survenue lors de l\'envoi du message.</div>';
+                            } elseif(isset($_GET['error']) && $_GET['error'] == 2) {
+                                echo '<div class="alert alert-warning">Veuillez remplir tous les champs du formulaire.</div>';
+                            }
+                            ?>
+                        </div>
+                        <a href="../index.php">Retour à l'accueil</a>
+                    </div>
                 </form>
-                <div class="text-center text-md-left">
-                    <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Envoyer</a>
-                    <a href="../index.html">Retour à l'accueil</a>
-                </div>
                 <div class="status"></div>
             </div>
             <!--Grid column-->
@@ -92,5 +103,6 @@
     <!--Section: Contact v.2-->
 
     <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

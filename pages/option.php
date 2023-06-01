@@ -40,5 +40,5 @@ session_start();
         <br>
         <a href="connexion.php">Se connecter</a>
         <br>
-    <a href="/SiteDPP/index.html">Retour à l'accueil</a>
+    <a href="/SiteDPP/index.php">Retour à l'accueil</a>
     <br>

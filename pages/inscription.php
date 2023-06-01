@@ -18,10 +18,10 @@ session_start();
         } else {
             $mysqli = new mysqli('localhost', 'root', '', 'steno');
             if ($mysqli->connect_errno) {
-                echo "Erreur connexion BDD";
+                echo "Erreur connexion BDD : " . $mysqli->connect_error;
             } else {
                 $pseudo = $mysqli->real_escape_string($_POST['pseudo']);
-                $mdp = md5($_POST['mdp']);
+                $mdp = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
                 $mail = $mysqli->real_escape_string($_POST['mail']);
                 $nom = $mysqli->real_escape_string($_POST['nom']);
                 $prenom = $mysqli->real_escape_string($_POST['prenom']);
@@ -34,17 +34,18 @@ session_start();
                     // Insérer les données dans la base de données
                     $insert = $mysqli->query("INSERT INTO membres (pseudo, mdp, mail, nom, prenom) VALUES ('$pseudo', '$mdp', '$mail', '$nom', '$prenom')");
                     if ($insert) {
+                        echo "Inscription réussie!";
                         // Forcer la mise à jour de la session
                         session_write_close();
 
-                        echo "Inscrit avec succès! Vous pouvez vous connecter: <a href='connexion.php'>Cliquez ici</a>.";
+                        echo "Inscrit avec succès !  Vous pouvez vous connecter: <a href='connexion.php'>Cliquez ici</a>.";
                         $traitementFini = true;
                     } else {
                         echo "Une erreur est survenue, merci de réessayer ou contactez-nous si le problème persiste.";
                     }
                 }
+                $mysqli->close();
             }
-            $mysqli->close();
         }
     }
 
@@ -64,7 +65,7 @@ session_start();
         <br>
         <a href="connexion.php">Se connecter</a>
 
-        <a href="../index.html">Retour à l'accueil</a>
+        <a href="../index.php">Retour à l'accueil</a>
         <br>
         <?php
     }
