@@ -9,38 +9,44 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="logo">
-                <a class="navbar-brand" href="#">
-                    <img src="./img/clavier.jpg" alt="Logo" class="logo-img">
-                </a>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.php">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./pages/article.php">Articles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./pages/PageContact.php">Contact</a>
+                    </li>
+                    <?php
+                        session_start();
+                        if (isset($_SESSION['pseudo'])) {
+                            echo '<li class="nav-item"><a class="nav-link" href="/SiteDPP/pages/espace-membre.php">Mon Compte</a></li>';
+                            echo '<li class="nav-item"><a class="nav-link" href="/SiteDPP/pages/deconnexion.php">Déconnexion</a></li>';
+                        } else {
+                            echo '<li class="nav-item"><a class="nav-link" href="/SiteDPP/pages/connexion.php">Espace Membre</a></li>';
+                        }
+                    ?>
+                </ul>
             </div>
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.php">Accueil</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./pages/article.php">Articles</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./pages/PageContact.php">Contact</a>
-                </li>
-                <?php
-                    session_start();
-                    if (isset($_SESSION['pseudo'])) {
-                        echo '<li class="nav-item"><a class="nav-link" href="/SiteDPP/pages/espace-membre.php">Mon Compte</a></li>';
-                        echo '<li class="nav-item"><a class="nav-link" href="/SiteDPP/pages/deconnexion.php">Déconnexion</a></li>';
-                    } else {
-                        echo '<li class="nav-item"><a class="nav-link" href="/SiteDPP/pages/connexion.php">Espace Membre</a></li>';
-                    }
-                ?>
-            </ul>
         </nav>
     </header>
 
     <main class="container">
         <div class="row">
             <div class="col-md-6">
+                <div id="random-quote">
+                    <h1>Citation aléatoire</h1>
+                    <p id="quote-content"></p>
+                </div>
+
                 <article class="card mb-4">
                     <div class="card-body">
                         <h2 class="card-title">Article 1</h2>
@@ -101,7 +107,7 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="random.js"></script>
     <script src="https://kit.fontawesome.com/68a7839f62.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>

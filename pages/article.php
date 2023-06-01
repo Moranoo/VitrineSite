@@ -4,37 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>STENOWORLD</title>
-    <link rel="stylesheet" href="/SiteDPP/Styles/style.css">
+     <link rel="stylesheet" href="../Styles/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="logo">
-                <a class="navbar-brand" href="#">
-                    <img src="../img/clavier.jpg" alt="Logo" class="logo-img">
-                </a>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="../index.php">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../pages/article.php">Articles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../pages/PageContact.php">Contact</a>
+                    </li>
+                    <?php
+                        session_start();
+                        if (isset($_SESSION['pseudo'])) {
+                            echo '<li class="nav-item"><a class="nav-link" href="/SiteDPP/pages/espace-membre.php">Mon Compte</a></li>';
+                            echo '<li class="nav-item"><a class="nav-link" href="/SiteDPP/pages/deconnexion.php">Déconnexion</a></li>';
+                        } else {
+                            echo '<li class="nav-item"><a class="nav-link" href="/SiteDPP/pages/connexion.php">Espace Membre</a></li>';
+                        }
+                    ?>
+                </ul>
             </div>
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="../index.php">Accueil</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../pages/article.php">Articles</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/SiteDPP/pages/PageContact.php">Contact</a>
-                </li>
-                <?php
-                    session_start();
-                    if (isset($_SESSION['pseudo'])) {
-                        echo '<li class="nav-item"><a class="nav-link" href="/SiteDPP/pages/espace-membre.php">Mon Compte</a></li>';
-                        echo '<li class="nav-item"><a class="nav-link" href="/SiteDPP/pages/deconnexion.php">Déconnexion</a></li>';
-                    } else {
-                        echo '<li class="nav-item"><a class="nav-link" href="/SiteDPP/pages/connexion.php">Espace Membre</a></li>';
-                    }
-                ?>
-            </ul>
         </nav>
     </header>
 
