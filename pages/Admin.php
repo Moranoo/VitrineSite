@@ -2,8 +2,8 @@
 session_start();
 
 // Vérifier si l'utilisateur est connecté en tant qu'administrateur
-if (!isset($_SESSION['pseudo']) || $_SESSION['role'] !== 'admin') {
-    header("Location: connexion.php"); // Rediriger vers la page de connexion si non connecté en tant qu'administrateur
+if (!isset($_SESSION['pseudo']) || strtolower($_SESSION['role']) !== 'admin') {
+    header("Location: connexion.php");
     exit;
 }
 
@@ -82,17 +82,19 @@ if (isset($_POST['action'], $_POST['member_id'])) {
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Page d'administration</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
+
 <body>
     <h1 class="text-center">Page d'administration</h1>
 
     <?php
     // Afficher le message d'action si présent
     if (isset($_SESSION['action_message'])) {
-        echo '<div class="alert alert-info text-center">'.$_SESSION['action_message'].'</div>';
+        echo '<div class="alert alert-info text-center">' . $_SESSION['action_message'] . '</div>';
         unset($_SESSION['action_message']);
     }
     ?>
@@ -124,16 +126,16 @@ if (isset($_POST['action'], $_POST['member_id'])) {
                                 $member_role = isset($row['role']) ? $row['role'] : 'user';
                                 $member_status_label = ($member_status === 'active') ? 'Actif' : 'Bloqué';
                                 $member_role_label = ($member_role === 'admin') ? 'Admin' : 'Utilisateur';
-                                ?>
+                    ?>
                                 <tr>
                                     <td><?php echo $member_id; ?></td>
                                     <td><?php echo $member_pseudo; ?></td>
                                     <td><?php echo $member_status_label; ?></td>
                                     <td><?php echo $member_role_label; ?></td>
                                     <td>
-                                        <form method="post" action="admin.php">
+                                        <form method="post" action="Admin.php">
                                             <input type="hidden" name="member_id" value="<?php echo $member_id; ?>">
-                                            <select name="action" class="form-control">                                                
+                                            <select name="action" class="form-control">
                                                 <option value="block">Bloquer</option>
                                                 <option value="unblock">Débloquer</option>
                                                 <option value="admin">Rendre admin</option>
@@ -144,7 +146,7 @@ if (isset($_POST['action'], $_POST['member_id'])) {
                                         </form>
                                     </td>
                                 </tr>
-                                <?php
+                    <?php
                             }
                         } else {
                             echo "<tr><td colspan='5'>Aucun membre trouvé.</td></tr>";
@@ -158,7 +160,8 @@ if (isset($_POST['action'], $_POST['member_id'])) {
         </div>
     </div>
     <div class="text-center mt-4">
-        <a href="/SiteDPP/index.php" class="btn btn-secondary">Accueil</a>
+        <a href="/stenoo/index.php" class="btn btn-secondary">Accueil</a>
     </div>
 </body>
+
 </html>

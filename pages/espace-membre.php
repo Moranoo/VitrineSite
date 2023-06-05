@@ -29,6 +29,7 @@ $Mdp = $row['mdp'];
 
 <!DOCTYPE HTML>
 <html>
+
 <head>
     <title>Espace membre</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -40,6 +41,7 @@ $Mdp = $row['mdp'];
         }
     </style>
 </head>
+
 <body>
     <a href="../index.php"><img class="mb-4 logo-img" src="../img/clavier.jpg" alt="logo de Sténotypie"></a>
     <div class="container">
@@ -47,10 +49,10 @@ $Mdp = $row['mdp'];
         <p>Pour modifier vos informations, <a href="espace-membre.php?modifier">cliquez ici</a></p>
         <p>Pour supprimer votre compte, <a href="espace-membre.php?supprimer">cliquez ici</a></p>
         <p>Pour vous déconnecter, <a href="deconnexion.php">cliquez ici</a></p>
-        <hr/>
+        <hr />
         <?php
         if ($Role == 'admin') {
-            echo '<p>Vous êtes un administrateur. Accédez à la <a href="admin/super-admin.php">page Super Admin</a>.</p>';
+            echo '<p>Vous êtes un administrateur. Accédez à la <a href="../pages/Admin.php">page Super Admin</a>.</p>';
         }
 
         if (isset($_GET['supprimer'])) {
@@ -136,7 +138,8 @@ $Mdp = $row['mdp'];
                 }
             }
         }
-    ?>
+        ?>
     </div>
 </body>
+
 </html>

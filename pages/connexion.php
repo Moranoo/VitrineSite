@@ -43,7 +43,7 @@ if (isset($_POST['valider'])) {
                         $mysqli->close();
                         if ($row['role'] === 'admin') {
                             // Redirection vers la page admin pour l'administrateur
-                            header("Location: admin/super-admin.php");
+                            header("Location: admin.php");
                         } else {
                             // Redirection vers la page espace-membre pour les autres membres
                             header("Location: espace-membre.php");
@@ -63,16 +63,18 @@ if (isset($_POST['valider'])) {
 
 <!DOCTYPE HTML>
 <html>
+
 <head>
     <title>Espace membre</title>
     <link rel="stylesheet" href="../Styles/pages/boutton.css">
 </head>
+
 <body>
     <h1>Se connecter</h1>
 
     <?php
     if (!isset($traitementFini)) {
-        ?>
+    ?>
         <p>Remplissez le formulaire ci-dessous pour vous connecter :</p>
         <form method="post" action="connexion.php">
             <input type="text" name="pseudo" placeholder="Votre pseudo..." required>
@@ -84,8 +86,9 @@ if (isset($_POST['valider'])) {
         <a href="inscription.php">S'inscrire</a>
         <br>
         <a href="../index.php">Retour à l'accueil</a>
-        <?php
+    <?php
     }
     ?>
 </body>
+
 </html>
