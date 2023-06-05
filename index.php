@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="Styles/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
+
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -26,13 +28,13 @@
                         <a class="nav-link" href="./pages/PageContact.php">Contact</a>
                     </li>
                     <?php
-                        session_start();
-                        if (isset($_SESSION['pseudo'])) {
-                            echo '<li class="nav-item"><a class="nav-link" href="/SiteDPP/pages/espace-membre.php">Mon Compte</a></li>';
-                            echo '<li class="nav-item"><a class="nav-link" href="/SiteDPP/pages/deconnexion.php">Déconnexion</a></li>';
-                        } else {
-                            echo '<li class="nav-item"><a class="nav-link" href="/SiteDPP/pages/connexion.php">Espace Membre</a></li>';
-                        }
+                    session_start();
+                    if (isset($_SESSION['pseudo'])) {
+                        echo '<li class="nav-item"><a class="nav-link" href="./pages/espace-membre.php">Mon Compte</a></li>';
+                        echo '<li class="nav-item"><a class="nav-link" href="./pages/deconnexion.php">Déconnexion</a></li>';
+                    } else {
+                        echo '<li class="nav-item"><a class="nav-link" href="./pages/connexion.php">Espace Membre</a></li>';
+                    }
                     ?>
                 </ul>
             </div>
@@ -113,4 +115,5 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>
