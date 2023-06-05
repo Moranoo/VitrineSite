@@ -1,11 +1,10 @@
-import { apiKey } from './config.js';
 
 const getQuote = async () => {
   let url = 'https://quotes15.p.rapidapi.com/quotes/random/?language_code=fr';
   let options = {
     method: 'GET',
     headers: {
-      'X-RapidAPI-Key': apiKey
+      'X-RapidAPI-Key':'31c5b37b10msh3838b234811cf59p1265aajsn7b6dcdda16d7'
     }
   };
 
