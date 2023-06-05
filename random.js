@@ -4,7 +4,7 @@ const getQuote = async () => {
   let options = {
     method: 'GET',
     headers: {
-      'X-RapidAPI-Key':
+      'X-RapidAPI-Key': Obtenir une key sur le site des API
     }
   };
 
