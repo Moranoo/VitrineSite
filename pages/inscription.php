@@ -6,10 +6,12 @@ session_start();
 <html>
 <head>
     <title>Script espace membre</title>
+    <link rel="stylesheet" href="../Styles/style.css">
     <link rel="stylesheet" href="../Styles/pages/boutton.css">
 </head>
-<body>
-    <h1>S'inscrire</h1>
+<body id="cover">
+<div class="blur-background">
+        <h1>S'inscrire</h1>
 
     <?php
     if (isset($_POST['valider'])) {
@@ -70,5 +72,6 @@ session_start();
         <?php
     }
     ?>
+    </div>
 </body>
 </html>

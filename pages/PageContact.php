@@ -5,11 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
+
+    <link rel="stylesheet" href="../Styles/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 </head>
-<body>
-    <a href="../index.php" class="d-flex justify-content-center mt-4">
-        <img class="mb-4" src="../img/clavier.jpg" alt="logo de Sténotypie" width="82" height="82">
+<body id="cover">
+<div class="blur-background">
+        <a href="../index.php" class="d-flex justify-content-center mt-4">
+        <img class="mb-4" src="../img/clavier.jpg" alt="logo de Sténotypie" width="82" height="82" style="border-radius: 50%;">
     </a>
 
     <!--Section: Contact v.2-->
@@ -99,6 +102,7 @@
             </div>
             <!--Grid column-->
         </div>
+                        </div>
     </section>
     <!--Section: Contact v.2-->
 

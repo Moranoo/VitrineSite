@@ -160,7 +160,7 @@ if (isset($_POST['action'], $_POST['member_id'])) {
         </div>
     </div>
     <div class="text-center mt-4">
-        <a href="/stenoo/index.php" class="btn btn-secondary">Accueil</a>
+        <a href="../index.php" class="btn btn-secondary">Accueil</a>
     </div>
 </body>
 

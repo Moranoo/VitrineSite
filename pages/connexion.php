@@ -66,15 +66,19 @@ if (isset($_POST['valider'])) {
 
 <head>
     <title>Espace membre</title>
+    <link rel="stylesheet" href="../Styles/style.css">
     <link rel="stylesheet" href="../Styles/pages/boutton.css">
 </head>
 
-<body>
-    <h1>Se connecter</h1>
+<body id="cover">
+<div class="blur-background">
+
+        <h1>Se connecter</h1>
 
     <?php
     if (!isset($traitementFini)) {
     ?>
+    <div class="blur-background">
         <p>Remplissez le formulaire ci-dessous pour vous connecter :</p>
         <form method="post" action="connexion.php">
             <input type="text" name="pseudo" placeholder="Votre pseudo..." required>
@@ -86,6 +90,7 @@ if (isset($_POST['valider'])) {
         <a href="inscription.php">S'inscrire</a>
         <br>
         <a href="../index.php">Retour à l'accueil</a>
+    </div>
     <?php
     }
     ?>

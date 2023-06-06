@@ -9,18 +9,19 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 
-<body>
+<body id="cover">
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#"></a>
+        <img class="mb-4" src="./img/clavier.jpg" alt="logo de Sténotypie" width="82" height="82" style="border-radius: 50%;">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav">    
                     <li class="nav-item active">
-                        <a class="nav-link" href="index.php">Accueil</a>
-                    </li>
+                    <a class="nav-link" href="./index.php">Accueil</a>
+
+                    </li>                
                     <li class="nav-item">
                         <a class="nav-link" href="./pages/article.php">Articles</a>
                     </li>
@@ -43,13 +44,15 @@
 
     <main class="container">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-8">
                 <div id="random-quote">
-                    <h1>Citation aléatoire</h1>
+                <div class="blur-background" id="random-quote">
+                    <h1 >Citation aléatoire</h1>
                     <p id="quote-content"></p>
                 </div>
+                </div>
 
-                <article class="card mb-4">
+                <article class="card mb-3">
                     <div class="card-body">
                         <h2 class="card-title">Article 1</h2>
                         <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt diam ut tortor commodo, vel rutrum enim rhoncus.</p>
