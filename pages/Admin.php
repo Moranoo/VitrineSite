@@ -85,6 +85,8 @@ if (isset($_POST['action'], $_POST['member_id'])) {
 
 <head>
     <title>Page d'administration</title>
+    <link rel="stylesheet" href="/SiteDPP/Styles/style.css">
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 
@@ -162,6 +164,13 @@ if (isset($_POST['action'], $_POST['member_id'])) {
     <div class="text-center mt-4">
         <a href="../index.php" class="btn btn-secondary">Accueil</a>
     </div>
+    <footer>
+        <div class="footer-links">
+        <a href="../pages/conditions-generales-utilisation.php">Conditions générales d'utilisation</a> | <a href="../pages/politique-confidentialite.php">Politique de confidentialité</a>
+            <p class="btn-primary">© 2023 STENOWORLD</p>
+
+        </div>
+    </footer>
 </body>
 
 </html>

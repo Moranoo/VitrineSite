@@ -110,6 +110,11 @@
             <a href="#"><i class="fab fa-snapchat-ghost"></i></a>
             <a href="#"><i class="fab fa-tiktok"></i></a>
         </div>
+        <div class="footer-links">
+        <a href="./pages/conditions-generales-utilisation.php">Conditions générales d'utilisation</a> | <a href="./pages/politique-confidentialite.php">Politique de confidentialité</a>
+            <p class="btn-primary">© 2023 STENOWORLD</p>
+
+        </div>
     </footer>
 
     <script src="random.js"></script>

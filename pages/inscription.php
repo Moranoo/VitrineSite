@@ -73,5 +73,12 @@ session_start();
     }
     ?>
     </div>
+    <footer>
+        <div class="footer-links">
+        <a href="../pages/conditions-generales-utilisation.php">Conditions générales d'utilisation</a> | <a href="../pages/politique-confidentialite.php">Politique de confidentialité</a>
+            <p class="btn-primary">© 2023 STENOWORLD</p>
+
+        </div>
+    </footer>
 </body>
 </html>

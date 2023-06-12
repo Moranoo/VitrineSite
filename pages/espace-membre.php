@@ -32,6 +32,7 @@ $Mdp = $row['mdp'];
 
 <head>
     <title>Espace membre</title>
+    <link rel="stylesheet" href="/SiteDPP/Styles/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         .logo-img {
@@ -140,6 +141,19 @@ $Mdp = $row['mdp'];
         }
         ?>
     </div>
+    <footer>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-snapchat-ghost"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+        </div>
+        <div class="footer-links">
+        <a href="../pages/conditions-generales-utilisation.php">Conditions générales d'utilisation</a> | <a href="../pages/politique-confidentialite.php">Politique de confidentialité</a>
+            <p class="btn-primary">© 2023 STENOWORLD</p>
+
+        </div>
+    </footer>
 </body>
 
 </html>

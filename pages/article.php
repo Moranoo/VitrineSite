@@ -30,8 +30,8 @@
                     <?php
                     session_start();
                     if (isset($_SESSION['pseudo'])) {
-                        echo '<li class="nav-item"><a class="nav-link" href="./pages/espace-membre.php">Mon Compte</a></li>';
-                        echo '<li class="nav-item"><a class="nav-link" href="./pages/deconnexion.php">Déconnexion</a></li>';
+                        echo '<li class="nav-item"><a class="nav-link" href="../pages/espace-membre.php">Mon Compte</a></li>';
+                        echo '<li class="nav-item"><a class="nav-link" href="../pages/deconnexion.php">Déconnexion</a></li>';
                     } else {
                         echo '<li class="nav-item"><a class="nav-link" href="../pages/connexion.php">Espace Membre</a></li>';
                     }
@@ -96,6 +96,11 @@
             <a href="#"><i class="fab fa-facebook"></i></a>
             <a href="#"><i class="fab fa-snapchat-ghost"></i></a>
             <a href="#"><i class="fab fa-tiktok"></i></a>
+        </div>
+        <div class="footer-links">
+        <a href="../pages/conditions-generales-utilisation.php">Conditions générales d'utilisation</a> | <a href="../pages/politique-confidentialite.php">Politique de confidentialité</a>
+        <p class="btn-primary">© 2023 STENOWORLD</p>
+
         </div>
     </footer>
     <script src="script.js"></script>
